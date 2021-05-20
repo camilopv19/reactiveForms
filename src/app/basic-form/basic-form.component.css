@@ -1,0 +1,7 @@
+form{
+    flex: auto;
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+}

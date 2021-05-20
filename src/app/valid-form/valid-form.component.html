@@ -1,0 +1,51 @@
+<form [formGroup]="myForm">
+    <h1>Valid form</h1>
+  Value {{ myForm.value | json }}
+  <p>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="email"
+        formControlName="email"
+        autocomplete="email"
+      />
+      <mat-error *ngIf="email!.invalid && email!.touched"
+        >This email doesn't look good</mat-error
+      >
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input
+        matInput
+        placeholder="password"
+        formControlName="password"
+        type="password"
+      />
+      <mat-hint layout-align="end">At least one number and one letter</mat-hint>
+      <mat-error *ngIf="password!.invalid && password!.touched"
+        >That password sucks</mat-error
+      >
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="age" [value]="0" formControlName="age" />
+      <mat-error *ngIf="age!.hasError('min') && age!.touched">
+        {{ age!.errors!.min!.actual }} is too young!
+      </mat-error>
+      <mat-error *ngIf="age!.hasError('max') && age!.touched">
+        {{ age!.errors!.max!.actual }} should retire! Try other
+      </mat-error>
+      <mat-error *ngIf="age!.hasError('maxLength') && age!.touched">
+        {{ age!.errors!.maxLength!.actual }} shouldn't be here!
+      </mat-error>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-checkbox formControlName="agree" color="primary">Are you sure?</mat-checkbox>
+  </p>
+  <p>
+      <button mat-raised-button [disabled]="myForm.invalid" color="primary">Let's do it!</button>
+  </p>
+</form>

@@ -1,0 +1,53 @@
+<form [formGroup]="myForm">
+  <h1>Nested Form</h1>
+  Value: {{ myForm.value | json }}
+  <hr />
+  <h2>Email</h2>
+  <p>
+    <mat-form-field>
+      <input matInput placeholder="email" formControlName="email" />
+    </mat-form-field>
+  </p>
+  <h2>Home phone</h2>
+  <div formGroupName="homePhone">
+      <h4>Area</h4>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="area" formControlName="area" />
+        </mat-form-field>
+      </p>
+      <h4>Prefix</h4>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="prefix" formControlName="prefix" />
+        </mat-form-field>
+      </p>
+      <h4>Line</h4>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="line" formControlName="line" />
+        </mat-form-field>
+      </p>
+  </div>
+  <h2>Cellphone</h2>
+  <div formGroupName="cellPhone">
+      <h4>Area</h4>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="area" formControlName="area" />
+        </mat-form-field>
+      </p>
+      <h4>Prefix</h4>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="prefix" formControlName="prefix" />
+        </mat-form-field>
+      </p>
+      <h4>Line</h4>
+      <p>
+        <mat-form-field>
+          <input matInput placeholder="line" formControlName="line" />
+        </mat-form-field>
+      </p>
+  </div>
+</form>
